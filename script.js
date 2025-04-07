@@ -16,7 +16,7 @@ function shotTip() {
     const tip = guessNumber.value
     //quatro verificações: se o número é válido, se acertou e se o chute foi menor ou maior
     if (tip <= 0 || tip > 100) {
-        alert('O número deve ser de 1 à 100')
+        alert('O número deve ser de 1 a 100')
     }
     else if (tip == num) {
         msn.innerText = `VOCÊ ACERTOU! 🎉 o número é: ${tip}`
