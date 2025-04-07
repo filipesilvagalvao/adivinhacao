@@ -11,9 +11,10 @@ const guessNumber = document.querySelector('#shotTip')
 //seleciona o main
 const main = document.querySelector('main')
 
+//função que faz as verificações, diz se acertou, decrementa as chances e exibe mensagens
 function shotTip() {
     const tip = guessNumber.value
-    //quatro verificações, se o número é válido, se acertou e se o chute foi menor ou maior
+    //quatro verificações: se o número é válido, se acertou e se o chute foi menor ou maior
     if (tip <= 0 || tip > 100) {
         alert('O número deve ser de 1 à 100')
     }
@@ -21,7 +22,7 @@ function shotTip() {
         msn.innerText = 'Você acertou! 🎉'
 
         guessNumber.setAttribute('disabled', true)
-
+        //adiciona o botão de rejogar
         main.innerHTML += `<button class="reload" onclick="reloader()">Rejogar?</button>`
     }
     else if (tip > num) {
@@ -41,12 +42,12 @@ function shotTip() {
         msn.innerText = `Você perdeu! O número secreto era: ${num}`
 
         guessNumber.setAttribute('disabled', true)
-
+        //adiciona o botão de rejogar
         main.innerHTML += `<button class="reload" onclick="reloader()">Rejogar?</button>`
     }
 
 }
-
+//eventos de click e enter que fazer a função shotTip executar
 guessShot.addEventListener('click', shotTip)
 guessNumber.addEventListener('keydown', (e) => e.key === 'Enter' ? shotTip() : '')
 //função de que recarrega a página, serve para rejogar
