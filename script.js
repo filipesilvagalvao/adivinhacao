@@ -19,7 +19,7 @@ function shotTip() {
         alert('O número deve ser de 1 à 100')
     }
     else if (tip == num) {
-        msn.innerText = 'Você acertou! 🎉'
+        msn.innerText = `VOCÊ ACERTOU! 🎉 o número é: ${tip}`
 
         guessNumber.setAttribute('disabled', true)
         //adiciona o botão de rejogar
