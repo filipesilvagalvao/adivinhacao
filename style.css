@@ -65,3 +65,11 @@ main>*:not(h1) {
     border: 1px solid;
     font-size: 1.3rem;
 }
+
+span {
+    color: #ffffff;
+    background-color: black;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
