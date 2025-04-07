@@ -14,6 +14,7 @@ const main = document.querySelector('main')
 //função que faz as verificações, diz se acertou, decrementa as chances e exibe mensagens
 function shotTip() {
     const tip = guessNumber.value
+    const attempts = Number(numAttempts.innerText)
     //quatro verificações: se o número é válido, se acertou e se o chute foi menor ou maior
     if (tip <= 0 || tip > 100) {
         alert('O número deve ser de 1 a 100')
@@ -28,17 +29,17 @@ function shotTip() {
     else if (tip > num) {
         msn.innerText = `O número secreto é menor que: ${tip}`
 
-        numAttempts.innerText = Number(numAttempts.innerText) - 1
+        numAttempts.innerText = attempts - 1
     }
     else if (tip < num) {
         msn.innerText = `O número secreto é maior que: ${tip}`
 
-        numAttempts.innerText = Number(numAttempts.innerText) - 1
+        numAttempts.innerText = attempts - 1
     }
     //reset do valor do input, zerar o input number
     guessNumber.value = ''
     //verifica se acabou as chances
-    if (Number(numAttempts.innerText) <= 0) {
+    if (attempts <= 0) {
         msn.innerText = `Você perdeu! O número secreto era: ${num}`
 
         guessNumber.setAttribute('disabled', true)
